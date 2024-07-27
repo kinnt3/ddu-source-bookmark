@@ -33,7 +33,7 @@ function! ddu#source#bookmark#add(args)
   endfor
 endfunction
 
-function! ddu#source#bookmark#define_add_bookmark()
+function! ddu#source#bookmark#define_add_bookmark_action()
   if exists('*denops#plugin#is_loaded') && denops#plugin#is_loaded('ddu')
     call ddu#custom#action('kind', 'file', 'addBookmark', 'ddu#source#bookmark#add')
   else
