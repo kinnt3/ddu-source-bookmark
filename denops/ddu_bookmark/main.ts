@@ -73,7 +73,7 @@ export async function loadBookmarkData(denops: Denops): Promise<BookmarkData> {
     return JSON.parse(new TextDecoder("utf-8").decode(txt)) as BookmarkData;
   } catch (_e) {
     return {
-      version: "0.1.0",
+      version: "1.0.0",
       group: { default: { name: "default", bookmarks: [] } },
     };
   }

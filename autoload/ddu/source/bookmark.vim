@@ -22,7 +22,7 @@ function! ddu#source#bookmark#get_default_group()
   return s:default_group_name
 endfunction
 
-function! ddu#source#bookmark#add(args) abort
+function! ddu#source#bookmark#add(args)
   for item in a:args.items
     let path = item.action.path
     let param = {'path': path}
@@ -33,7 +33,7 @@ function! ddu#source#bookmark#add(args) abort
   endfor
 endfunction
 
-function! ddu#source#bookmark#add_action() abort
+function! ddu#source#bookmark#define_add_bookmark()
   if exists('*denops#plugin#is_loaded') && denops#plugin#is_loaded('ddu')
     call ddu#custom#action('kind', 'file', 'addBookmark', 'ddu#source#bookmark#add')
   else
