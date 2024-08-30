@@ -80,9 +80,6 @@ export async function loadBookmarkData(denops: Denops): Promise<BookmarkData> {
 }
 
 async function saveBookmarkData(denops: Denops, data: BookmarkData): Promise<void> {
-  for (const group of Object.values(data.group)) {
-    group.bookmarks.sort((a, b) => a.name.localeCompare(b.name));
-  }
   const path = await getDataFilePath(denops);
   await ensureFile(path);
   await Deno.writeFile(
